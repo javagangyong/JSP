@@ -1,0 +1,28 @@
+지시자 (directive)
+- page : import, encoding, session, errorPage 등 JSP 전체에 적용되는 설정
+- include : 대상 JSP의 소스를 가져와서 합친 상태로 컴파일한다. 변수가 공유된다
+- taglib : 기본 액션태그 이외의 추가적인 xml방식 태그를 사용할 수 있도록 선언한다
+
+선언부 (declaration)
+JSP가 클래스로 변환될때 멤버 필드/멤버 메서드에 해당하는 변수 및 함수를 선언/정의한다
+attribute의 사용빈도가 높아지면, 선언부의 사용빈도는 낮아진다
+
+스크립틀릿(scriptlet)
+JSP의 service() 에 해당한다. 주요 자바코드를 작성할 수 있으며
+이후 등장하는 JSTL에 의해, 제어문 및 변수선언 내용은 비중이 낮아진다
+
+표현식 (expression)
+service 함수 안에 있는 지역변수 혹은 함수의 호출결과값을 HTML에 출력하기 위해 사용
+이후 등장하는 EL에 의해, attribute, parameter, cookie, header를 출력하는 내용은 대체된다
+
+액션 태그 (action tag)
+- <jsp:useBean> : 클래스의 기본생성자로 객체를 생성하고, 지정한 scope에 attribute로 등록
+- <jsp:setProperty> : 지정한 name의 객체에 속성을 넣는다. value가 없으면 파라미터에서 찾는다
+- <jsp:getProperty> : 지정한 name의 객체에서 property속성을 찾아서 HTML에 출력한다
+- <jsp:include> : 지정한 page의 컴파일 결과를 가져와서 현재 위치에 포함시킨다 (변수공유 안함)
+- <jsp:forward> : 지정한 page로 포워드한다. request와 response객체를 그대로 넘긴다
+
+
+
+
+
