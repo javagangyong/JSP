@@ -1,0 +1,34 @@
+1) 대문페이지 화면구현
+- header
+- nav
+- section (main)
+- footer
+
+1-1) header 및 nav는 header.jsp에 같이 작성한다
+- nav에는 프로그램에서 필요한 링크를 미리 작성해둔다
+- 스타일은 요소의 위치 및 식별이 가능한 수준으로만 작성한다			1) 화면구현
+- 필요하다면 footer.jsp 파일도 별도로 작성한다
+
+1-2) index.jsp는 header.jsp를 include 하고
+대문 페이지에서 필요한 내용만 section(main)에 작성한다
+
+2) DAO및 DTO를 작성한다
+- 데이터 모델링 및 테이블 생성 (제약조건 적용)
+- DTO는 자바 빈즈 규약에 맞게 작성한다					2) SQL활용
+- DAO는 싱글톤을 적용하여, CRUD기능을 함수로 구현한다
+
+3) nav에 작성한 링크를 jsp페이지로 만들어서 기능을 각각 구현한다
+
+- index.jsp		대문 페이지
+- header.jsp		공통 디자인 및 모듈
+- list.jsp		전체 목록 (및 검색 포함 가능)
+- view.jsp		단일 조회 (idx와 같은 pk활용)		3) 기능구현
+- add.jsp		추가 화면 (form 태그)
+- add-action.jsp	추가 처리 (dao.insert(dto))
+- modify.jsp		단일 조회 및 form
+- modify-action.jsp	수정 처리
+- delete.jsp		삭제 처리 (idx와 같은 pk활용)
+
+
+
+
