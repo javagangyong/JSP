@@ -40,6 +40,7 @@
 		display: flex;
 		flex-flow: wrap;
 		margin: auto;
+		border: 1px dashed	green;
 	}
 	div.item {
 		box-sizing: border-box;
@@ -47,6 +48,19 @@
 		margin: 10px;
 		padding: 10px;
 		text-align: center;
+		border: 1px dashed black;
+	}
+	div.detail {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	div.sb {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 	}
 </style>
 </head>

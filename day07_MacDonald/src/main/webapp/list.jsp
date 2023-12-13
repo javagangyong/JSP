@@ -3,19 +3,24 @@
 <%@ include file="header.jsp" %>
 
 <section class="frame">
-	<c:if test="${empty parma.category }">
+	<c:if test="${empty param.category }">
 		<c:set var="list" value="${dao.selectList() }" />
 	</c:if>
 	<c:if test="${not empty param.category }">
 		<c:set var="list" value="${dao.selectListByCategory(param.category) }" />
 	</c:if>
 	
+	<div>
+		<a href="${cpath }/add.jsp"><button>추가</button></a>
+	</div>
+	
 	<div class="box">
 		<c:forEach var="dto" items="${list }">
 		<div class="item">
 			<div class="img">
 				<a href="${cpath }/view.jsp?idx=${dto.idx}">
-					<img src="${cpath }/image/${dto.imgName }" height="120"></a>
+					<img src="${cpath }/image/${dto.imgName }" height="120">
+				</a>
 			</div>
 			<div class="name">${dto.name }</div>
 			<div class="price">${dto.price }원</div>
