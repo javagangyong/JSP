@@ -31,10 +31,34 @@
 	div.item {
 		box-sizing: border-box;
 		width: 400px;
-		margin: 10px;
+		height: 337px;
 		padding: 10px;
 		text-align: center;
 		border: 1px dashed black;
+		margin: 10px
+	}
+	div.img {
+		width: 360px;
+		height: 202px;
+		border: 1px	dashed red;
+		margin: 0 auto;
+		display: flex;
+		text-align: center;
+		flex-flow: column;
+		justify-content: center;
+	}
+	img {
+		width: 360px;
+		height: 202px;
+		border: 1px	dashed red;
+	}
+	div.rTitle {
+		max-height: 4.4rem;
+	    -webkit-line-clamp: 2;
+	    display: -webkit-box;
+	    -webkit-box-orient: vertical;
+	    text-overflow: ellipsis;
+    	white-space: normal;
 	}
 </style>
 </head>

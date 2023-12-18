@@ -13,6 +13,10 @@
 						<img src="${dto.thumbNail }">
 					</a>
 				</div>
+				<div class="title">
+					<div>${dto.channel }</div>
+					<div class="rTitle">${dto.title }</div>
+				</div>
 			</div>
 		</c:forEach>
 	</div>

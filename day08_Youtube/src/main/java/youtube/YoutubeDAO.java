@@ -17,7 +17,7 @@ public class YoutubeDAO {
 	private ResultSet rs;
 	
 	private Connection getConnection() throws Exception {
-		Class.forName(OracleDriver.class.getName());
+		Class.forName("oracle.jdbc.driver.OracleDriver");
 		return DriverManager.getConnection(url, user, password);
 	}
 	

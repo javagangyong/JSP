@@ -6,6 +6,8 @@
 <jsp:setProperty property="*" name="dto"/>
 
 <c:set var="row" value="${dao.insert(dto) }" />
+<!-- return된 row값을 이용하기 위해 setAttribute -->
+<%-- <% dao.insert(dto); %> --%>
 
 <c:if test="${row != 0 }">
 	<c:set var="idx" value="${dao.selectCurrSeq() }" />
