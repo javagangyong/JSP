@@ -26,6 +26,11 @@
 		color: black;
 		cursor: pointer;
 	}
+	.sb {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 </style>
 </head>
 <body>
@@ -33,13 +38,18 @@
 <h1>list.jsp</h1>
 <hr>
 
-<form action="list.jsp">
-	<p>
-		<input type="search" name="search" placeholder="검색어를 입력하세요"
-			   autofocus value="${param.search }">
-		<input type="submit" value="검색">
-	</p>
-</form>
+<div class="sb">
+	<form action="list.jsp">
+		<p>
+			<input type="search" name="search" placeholder="검색어를 입력하세요"
+				   autofocus value="${param.search }">
+			<input type="submit" value="검색">
+		</p>
+	</form>
+	<div>
+		<a href="add.jsp"><button>추가</button></a>
+	</div>
+</div>
 
 
 <table>
