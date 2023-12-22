@@ -70,6 +70,13 @@
 		justify-content: space-between;
 		align-items: center;
 	}
+	.view {
+		display: flex;
+		background-color: #0000ff33;
+	}
+	.view > div {
+		padding: 10px;
+	}
 </style>
 </head>
 <body>

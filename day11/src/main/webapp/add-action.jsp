@@ -8,7 +8,7 @@
 <c:set var="row" value="${dao.insert(dto) }" />
 
 <c:if test="${row != 0 }">
-	<c:redirect url="list.jsp" />
+	<c:redirect url="index.jsp" />
 </c:if>
 
 <script>

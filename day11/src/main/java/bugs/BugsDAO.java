@@ -95,4 +95,76 @@ public class BugsDAO {
 		System.out.println("불러온 목록의 개수 : " + list.size());
 		return list;
 	}
+	
+	// 조회
+	public BugsDTO selectOne(int id) {
+		BugsDTO dto = null;
+		String sql = "select * from bugs where id = ?";
+		
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				dto = mapping(rs);	// 하나 가져와서
+				return dto;			// 곧바로 반환한다
+				// return이 실행되면 함수를 종료시키지만
+				// 자바에서는 미리 종료시키기 전에 꼭 finally를 실행시키고 종료시킨다
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally { close(); }
+		
+		return dto;
+	}
+	
+	// 추가
+	public int insert(BugsDTO dto) {
+		int row = 0;
+		String sql = "insert into bugs ("
+				+ "		artist_name,"
+				+ "		album_name,"
+				+ "		name,"
+				+ "		genre,"
+				+ "		playTime,"
+				+ "		isTitle,"
+				+ "		lyrics"
+				+ ") values ("
+				+ "		?, ?, ?, ?, ?, ?, ?"
+				+ ")";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getArtist_name());
+			pstmt.setString(2, dto.getAlbum_name());
+			pstmt.setString(3, dto.getName());
+			pstmt.setString(4, dto.getGenre());
+			pstmt.setInt(5, dto.getPlayTime());
+			pstmt.setInt(6, dto.getIsTitle());
+			pstmt.setString(7, dto.getLyrics());
+			row = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally { close(); }
+		return row;
+	}
+	
+	// 삭제
+	public int delete(int id) {	// 외부에서 호출해야하니까 public, delete쿼리는 영향받은 줄 수를 반환
+		int row = 0;
+		String sql = "delete from bugs where id = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, id);
+			row = pstmt.executeUpdate();
+			// sql이 select이면 executeQuery() -- ResultSet 반환
+			// sql이 insert/update/delete 이면 executeUpdate() -- int 반환
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally { close(); }
+		
+		return row;
+	}
 }
