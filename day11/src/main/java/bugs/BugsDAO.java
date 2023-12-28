@@ -76,8 +76,12 @@ public class BugsDAO {
 	// select * from bugs order by artist_name, id;
 	public List<BugsDTO> selectAll(String search) {
 		ArrayList<BugsDTO> list = new ArrayList<BugsDTO>();
-		String sql = "select * from bugs " + " where" + "		name like '%' || ? || '%'" + "		or"
-				+ "		artist_name like '%' || ? || '%'" + "order by artist_name, id";
+		String sql = "select * from bugs "
+				+ " where" 
+				+ "		name like '%' || ? || '%'" 
+				+ "		or"
+				+ "		artist_name like '%' || ? || '%'" 
+				+ "order by artist_name, id";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
