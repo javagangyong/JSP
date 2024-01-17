@@ -20,7 +20,7 @@
 						</div>
 					<div id="person">
 						<img src="https://cdn-icons-png.flaticon.com/512/878/878719.png" width="40px;">
-						<div style="justify-content: center;">${dto.person }명</div>
+						<div style="align-items: center;">${dto.person }명</div>
 					</div>
 				</div>
 				<div>
